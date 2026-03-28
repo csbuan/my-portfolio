@@ -1,6 +1,6 @@
 .main {
   min-height: 100vh;
-  background: #0f172a;
+  background: #0D3B66;
   color: #e2e8f0;
 }
 
@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: rgba(15, 23, 42, 0.95);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(13, 59, 102, 0.95);
+  border-bottom: 1px solid rgba(250, 240, 202, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -19,7 +19,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -40,7 +40,7 @@
 }
 
 .navLinks a:hover {
-  color: #3b82f6;
+  color: #FAFOCA;
 }
 
 .container {
@@ -52,7 +52,7 @@
 .container h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -71,8 +71,8 @@
 }
 
 .contactInfo {
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(13, 59, 102, 0.3);
+  border: 1px solid rgba(250, 240, 202, 0.2);
   border-radius: 0.75rem;
   padding: 2rem;
 }
@@ -88,7 +88,7 @@
 }
 
 .infoItem h3 {
-  color: #3b82f6;
+  color: #FAFOCA;
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
@@ -100,12 +100,12 @@
 }
 
 .infoItem a:hover {
-  color: #8b5cf6;
+  color: #FFE66D;
 }
 
 .form {
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(13, 59, 102, 0.3);
+  border: 1px solid rgba(250, 240, 202, 0.2);
   border-radius: 0.75rem;
   padding: 2rem;
 }
@@ -131,8 +131,8 @@
 .formGroup textarea {
   width: 100%;
   padding: 0.75rem;
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(13, 59, 102, 0.5);
+  border: 1px solid rgba(250, 240, 202, 0.2);
   border-radius: 0.5rem;
   color: #e2e8f0;
   font-family: inherit;
@@ -143,7 +143,7 @@
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: rgba(59, 130, 246, 0.5);
+  border-color: rgba(250, 240, 202, 0.5);
 }
 
 .formGroup input::placeholder,
@@ -154,8 +154,8 @@
 .submitButton {
   width: 100%;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
+  color: #0D3B66;
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -166,7 +166,7 @@
 
 .submitButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 25px rgba(250, 240, 202, 0.4);
 }
 
 .submitButton:active {
@@ -186,7 +186,7 @@
 .footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  border-top: 1px solid rgba(250, 240, 202, 0.2);
   color: #94a3b8;
   margin-top: 3rem;
 }
