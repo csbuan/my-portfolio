@@ -1,7 +1,7 @@
 .main {
   min-height: 100vh;
-  background: #0D3B66;
-  color: #e2e8f0;
+  background: #2F4156;
+  color: #FFFFFF;
 }
 
 .nav {
@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: rgba(13, 59, 102, 0.95);
-  border-bottom: 1px solid rgba(250, 240, 202, 0.2);
+  background: rgba(47, 65, 86, 0.95);
+  border-bottom: 1px solid rgba(245, 239, 235, 0.4);
   position: sticky;
   top: 0;
   z-index: 100;

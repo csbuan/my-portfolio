@@ -1,7 +1,7 @@
 .main {
   min-height: 100vh;
-  background: #0D3B66;
-  color: #e2e8f0;
+  background: #2F4156; /* Navy */
+  color: #FFFFFF;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
@@ -10,8 +10,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: rgba(13, 59, 102, 0.95);
-  border-bottom: 1px solid rgba(250, 240, 202, 0.2);
+  background: rgba(47, 65, 86, 0.95); /* Navy */
+  border-bottom: 1px solid rgba(245, 239, 235, 0.3); /* Beige */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -20,7 +20,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
+  background: linear-gradient(135deg, #567C8D 0%, #C8D9E6 100%); /* Teal to Sky */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -35,13 +35,13 @@
 }
 
 .navLinks a {
-  color: #cbd5e1;
+  color: #F5EFEB; /* Beige */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navLinks a:hover {
-  color: #FAFOCA;
+  color: #C8D9E6; /* Sky Blue */
 }
 
 .hero {
@@ -56,7 +56,7 @@
 .heroContent h1 {
   font-size: 3.5rem;
   margin: 0;
-  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
+  background: linear-gradient(135deg, #567C8D 0%, #C8D9E6 100%); /* Teal to Sky */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,8 +72,8 @@
 .cta {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
-  color: #0D3B66;
+  background: linear-gradient(135deg, #F5EFEB 0%, #C8D9E6 100%); /* Beige to Sky */
+  color: #2F4156; /* Navy */
   text-decoration: none;
   border-radius: 0.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -81,7 +81,7 @@
 
 .cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(250, 240, 202, 0.4);
+  box-shadow: 0 10px 25px rgba(88, 124, 141, 0.45); /* muted teal shadow */
 }
 
 .featured {
@@ -94,7 +94,7 @@
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
+  background: linear-gradient(135deg, #567C8D 0%, #C8D9E6 100%); /* Teal to Sky */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -108,15 +108,15 @@
 }
 
 .projectCard {
-  background: rgba(13, 59, 102, 0.5);
-  border: 1px solid rgba(250, 240, 202, 0.2);
+  background: rgba(88, 124, 141, 0.35); /* Tealish */
+  border: 1px solid rgba(245, 239, 235, 0.35);
   border-radius: 0.75rem;
   padding: 2rem;
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .projectCard:hover {
-  border-color: rgba(250, 240, 202, 0.5);
+  border-color: rgba(245, 239, 235, 0.7);
   transform: translateY(-5px);
 }
 
@@ -133,13 +133,13 @@
 }
 
 .projectCard a {
-  color: #FAFOCA;
+  color: #C8D9E6; /* Sky */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .projectCard a:hover {
-  color: #FFE66D;
+  color: #F5EFEB; /* Beige */
 }
 
 .footer {
