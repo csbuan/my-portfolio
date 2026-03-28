@@ -45,7 +45,7 @@ export default function Contact() {
 
       <section className={styles.container}>
         <h1>Get In Touch</h1>
-        <p className={styles.subtitle}>Feel free to reach out. I'm always open to new opportunities and interesting projects.</p>
+        <p className={styles.subtitle}>Feel free to reach out. I&apos;m always open to new opportunities and interesting projects.</p>
 
         <div className={styles.content}>
           <div className={styles.contactInfo}>
@@ -122,7 +122,7 @@ export default function Contact() {
 
             {submitted && (
               <p className={styles.successMessage}>
-                Thanks for reaching out! I'll get back to you soon.
+                Thanks for reaching out! I&apos;ll get back to you soon.
               </p>
             )}
           </form>

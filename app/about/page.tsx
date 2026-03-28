@@ -22,7 +22,7 @@ export default function About() {
         <div className={styles.content}>
           <div className={styles.bio}>
             <p>
-              Hello! I'm a passionate developer with a love for creating beautiful and functional web applications.
+              Hello! I&apos;m a passionate developer with a love for creating beautiful and functional web applications.
               With experience in modern web technologies, I strive to build solutions that make a difference.
             </p>
             

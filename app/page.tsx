@@ -18,7 +18,7 @@ export default function Home() {
 
       <section className={styles.hero} id="home">
         <div className={styles.heroContent}>
-          <h1>Hi, I'm a Developer</h1>
+          <h1>Hi, I&apos;m a Developer</h1>
           <p>Building amazing things with code</p>
           <Link href="/projects" className={styles.cta}>
             View My Work
