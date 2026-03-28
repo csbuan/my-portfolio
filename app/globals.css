@@ -10,9 +10,18 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --color-navy: #2F4156;
+  --color-sky: #C8D9E6;
+  --color-white: #FFFFFF;
+  --color-muted: #B3C8DA;
+  --color-bg-overlay: rgba(47, 65, 86, 0.95);
+  --color-border: rgba(200, 217, 230, 0.35);
+}
+
 body {
-  background: #2F4156; /* Navy */
-  color: #FFFFFF;
+  background: var(--color-navy);
+  color: var(--color-white);
 }
 
 a {

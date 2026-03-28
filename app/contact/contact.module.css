@@ -1,7 +1,7 @@
 .main {
   min-height: 100vh;
-  background: #2F4156;
-  color: #FFFFFF;
+  background: var(--color-navy);
+  color: var(--color-white);
 }
 
 .nav {
@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: rgba(47, 65, 86, 0.95);
-  border-bottom: 1px solid rgba(245, 239, 235, 0.4);
+  background: var(--color-bg-overlay);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -19,7 +19,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
+  background: linear-gradient(135deg, var(--color-sky) 0%, var(--color-white) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -34,13 +34,13 @@
 }
 
 .navLinks a {
-  color: #cbd5e1;
+  color: var(--color-sky);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navLinks a:hover {
-  color: #FAFOCA;
+  color: var(--color-white);
 }
 
 .container {
@@ -52,7 +52,7 @@
 .container h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
+  background: linear-gradient(135deg, var(--color-sky) 0%, var(--color-white) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -60,7 +60,7 @@
 
 .subtitle {
   font-size: 1.1rem;
-  color: #cbd5e1;
+  color: var(--color-sky);
   margin-bottom: 3rem;
 }
 
@@ -70,17 +70,19 @@
   gap: 3rem;
 }
 
-.contactInfo {
-  background: rgba(13, 59, 102, 0.3);
-  border: 1px solid rgba(250, 240, 202, 0.2);
+.contactInfo,
+.form {
+  background: rgba(47, 65, 86, 0.35);
+  border: 1px solid var(--color-border);
   border-radius: 0.75rem;
   padding: 2rem;
 }
 
-.contactInfo h2 {
+.contactInfo h2,
+.form h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: #e2e8f0;
+  color: var(--color-sky);
 }
 
 .infoItem {
@@ -88,32 +90,19 @@
 }
 
 .infoItem h3 {
-  color: #FAFOCA;
+  color: var(--color-white);
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
 
 .infoItem a {
-  color: #cbd5e1;
+  color: var(--color-sky);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .infoItem a:hover {
-  color: #FFE66D;
-}
-
-.form {
-  background: rgba(13, 59, 102, 0.3);
-  border: 1px solid rgba(250, 240, 202, 0.2);
-  border-radius: 0.75rem;
-  padding: 2rem;
-}
-
-.form h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #e2e8f0;
+  color: var(--color-white);
 }
 
 .formGroup {
@@ -123,7 +112,7 @@
 .formGroup label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #cbd5e1;
+  color: var(--color-sky);
   font-weight: 500;
 }
 
@@ -131,10 +120,10 @@
 .formGroup textarea {
   width: 100%;
   padding: 0.75rem;
-  background: rgba(13, 59, 102, 0.5);
-  border: 1px solid rgba(250, 240, 202, 0.2);
+  background: rgba(47, 65, 86, 0.5);
+  border: 1px solid var(--color-border);
   border-radius: 0.5rem;
-  color: #e2e8f0;
+  color: var(--color-sky);
   font-family: inherit;
   font-size: 1rem;
   transition: border-color 0.3s ease;
@@ -143,19 +132,19 @@
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: rgba(250, 240, 202, 0.5);
+  border-color: rgba(200, 217, 230, 0.85);
 }
 
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
-  color: #64748b;
+  color: var(--color-muted);
 }
 
 .submitButton {
   width: 100%;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #FAFOCA 0%, #FFE66D 100%);
-  color: #0D3B66;
+  background: linear-gradient(135deg, var(--color-sky) 0%, var(--color-white) 100%);
+  color: var(--color-navy);
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -166,7 +155,7 @@
 
 .submitButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(250, 240, 202, 0.4);
+  box-shadow: 0 10px 25px rgba(88, 124, 141, 0.4);
 }
 
 .submitButton:active {
@@ -186,8 +175,8 @@
 .footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid rgba(250, 240, 202, 0.2);
-  color: #94a3b8;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-sky);
   margin-top: 3rem;
 }
 
