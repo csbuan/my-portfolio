@@ -47,8 +47,9 @@ export default function Home() {
           <span>Camille Buan</span>
         </Link>
         <ul className={styles.navLinks}>
-          <li><Link href="#home">Home</Link></li>
           <li><Link href="/projects">Projects</Link></li>
+          <li><Link href="/blogs">Blogs</Link></li>
+          <li><Link href="/certificates">Certificates</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>
@@ -59,6 +60,19 @@ export default function Home() {
           <img src="/media/my-logo-square.jpeg" alt="Camille logo" width={90} height={90} style={{ borderRadius: '50%', objectFit: 'cover' }} />
           <h1>Camille Buan</h1>
           <p>Senior Data Analyst | Data Science</p>
+
+          <section className={styles.stats}>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>{views}</span>
+              <span className={styles.statLabel}>Views</span>
+            </div>
+            <div className={styles.statItem}>
+              <button onClick={handleLike} className={styles.likeButton} disabled={liked}>
+                {liked ? '❤️' : '🤍'} {likes}
+              </button>
+              <span className={styles.statLabel}>Likes</span>
+            </div>
+          </section>
 
           <div className={styles.socials}>
             <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">✉️</a>
@@ -94,28 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.stats}>
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>{views}</span>
-          <span className={styles.statLabel}>Views</span>
-        </div>
-        <div className={styles.statItem}>
-          <button onClick={handleLike} className={styles.likeButton} disabled={liked}>
-            {liked ? '❤️' : '🤍'} {likes}
-          </button>
-          <span className={styles.statLabel}>Likes</span>
-        </div>
-      </section>
 
-      <section className={styles.socials}>
-        <p>Senior Data Analyst | Data Science</p>
-        <div className={styles.socialIcons}>
-          <a href="mailto:buancamillee@gmail.com" aria-label="Email" className={styles.socialLink}>✉️</a>
-          <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.socialLink}>in</a>
-          <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={styles.socialLink}>GH</a>
-          <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" aria-label="Discord" className={styles.socialLink}>🎮</a>
-        </div>
-      </section>
       <footer className={styles.footer}>
         <p>&copy; 2023 Camille Buan. All rights reserved.</p>
       </footer>
