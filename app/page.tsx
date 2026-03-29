@@ -80,7 +80,7 @@ export default function Home() {
               <img src="/media/email-logo.png" alt="Email" className={styles.socialIcon} />
             </a>
             <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
-              <img src="/media/linked-logo.png" alt="LinkedIn" className={styles.socialIcon} />
+              <img src="/media/linkedin-logo.png" alt="LinkedIn" className={styles.socialIcon} />
             </a>
             <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
               <img src="/media/github-logo.png" alt="GitHub" className={styles.socialIcon} />

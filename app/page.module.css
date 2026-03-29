@@ -230,6 +230,7 @@
 .socialIcon {
   width: 26px;
   height: 26px;
+  filter: brightness(0) saturate(100%) invert(40%) sepia(84%) saturate(450%) hue-rotate(175deg) brightness(95%) contrast(90%);
 }
 
 .likeButton {
