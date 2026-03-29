@@ -42,7 +42,7 @@ export default function Contact() {
             height={32}
             style={{ borderRadius: '50%', objectFit: 'cover', marginRight: '0.5rem' }}
           />
-          <span>Camille Buan</span>
+          <span>Portfolio</span>
         </Link>
         <ul className={styles.navLinks}>
           <li><Link href="/">Home</Link></li>
