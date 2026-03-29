@@ -147,7 +147,6 @@
 
 .socials {
   margin: 3rem 0 2rem;
-  text-align: center;
   color: var(--color-white);
 }
 
@@ -160,7 +159,8 @@
 .socialIcons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+  align-items: center;
 }
 
 .socialLink {
@@ -227,9 +227,6 @@
   width: 30px;
   height: 30px;
   margin-bottom: 0.25rem;
-  padding: 5px;
-  border-radius: 50%;
-  background: #071730;
 }
 
 .likeIcon {
@@ -237,9 +234,6 @@
   height: 24px;
   margin-right: 0.35rem;
   vertical-align: middle;
-  padding: 4px;
-  border-radius: 50%;
-  background: #071730;
 }
 
 .statIconSmall {
@@ -247,10 +241,23 @@
   height: 24px;
   margin-right: 0.35rem;
   vertical-align: middle;
-  padding: 4px;
-  border-radius: 50%;
-  background: #071730;
 }
+
+.socialLink {
+  width: 44px;
+  height: 44px;
+  background: #071730;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.socialLink:hover {
+  background: #0a2449;
+}
+
 
 .socialIcon {
   width: 26px;

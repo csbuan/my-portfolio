@@ -63,7 +63,7 @@ export default function Home() {
 
           <section className={styles.stats}>
             <div className={styles.statItem}>
-              <img src="/media/view-logo.png" alt="Views" className={styles.viewIcon} />
+              <img src="/media/view-logo.png?v=2" alt="Views" className={styles.viewIcon} />
               <span className={styles.statNumber}>{views}</span>
               <span className={styles.statLabel}>Views</span>
             </div>
@@ -76,9 +76,10 @@ export default function Home() {
           </section>
 
           <div className={styles.socials}>
-            <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">
-              <img src="/media/email-logo.png" alt="Email" className={styles.socialIcon} />
-            </a>
+            <div className={styles.socialIcons}>
+              <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">
+                <img src="/media/email-logo.png" alt="Email" className={styles.socialIcon} />
+              </a>
             <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
               <img src="/media/linkedin-logo.png" alt="LinkedIn" className={styles.socialIcon} />
             </a>
@@ -88,6 +89,7 @@ export default function Home() {
             <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">
               <img src="/media/discord-logo.png" alt="Discord" className={styles.socialIcon} />
             </a>
+          </div>
           </div>
 
           <Link href="/projects" className={styles.cta}>
