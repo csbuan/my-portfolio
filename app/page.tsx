@@ -18,9 +18,10 @@ export default function Home() {
 
       <section className={styles.hero} id="home">
         <div className={styles.heroContent}>
-          <img src="/Users/camillebuan/Coding Projects/my-portfolio/media/my-logo-square.jpeg" alt="Camille logo" />
+          <img src="/media/my-logo-square.jpeg" alt="Camille logo" width={90} height={90} style={{ borderRadius: '50%', objectFit: 'cover' }} />
           <h1>Hi, I&apos;m a Data Scientist</h1>
-          <p>Turning data into insights, and insights into impact.
+          <p>
+            Turning data into insights, and insights into impact.<br />
             I build data-driven solutions using analytics, machine learning, and storytelling to solve real-world problems.
           </p>
           <Link href="/projects" className={styles.cta}>
