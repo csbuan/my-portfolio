@@ -15,7 +15,7 @@ export default function Home() {
             height={32}
             style={{ borderRadius: '50%', objectFit: 'cover', marginRight: '0.5rem' }}
           />
-          <span>amille Buan</span>
+          <span>Camille Buan</span>
         </Link>
         <ul className={styles.navLinks}>
           <li><Link href="#home">Home</Link></li>
