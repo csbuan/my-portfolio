@@ -52,6 +52,8 @@ export default function Projects() {
         <ul className={styles.navLinks}>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/projects">Projects</Link></li>
+          <li><Link href="/blogs">Blogs</Link></li>
+          <li><Link href="/certificates">Certificates</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>
@@ -82,7 +84,7 @@ export default function Projects() {
       </section>
 
       <footer className={styles.footer}>
-        <p>&copy; 2024 Camille Buan. All rights reserved.</p>
+        <p>&copy; 2023 Camille Buan. All rights reserved.</p>
       </footer>
     </main>
   );

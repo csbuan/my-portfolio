@@ -277,7 +277,7 @@
 .socialLink {
   width: 44px;
   height: 44px;
-  background: #071730;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -286,7 +286,7 @@
 }
 
 .socialLink:hover {
-  background: #0a2449;
+  background: rgba(255, 255, 255, 0.28);
 }
 
 

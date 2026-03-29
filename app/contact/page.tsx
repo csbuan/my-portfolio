@@ -47,6 +47,8 @@ export default function Contact() {
         <ul className={styles.navLinks}>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/projects">Projects</Link></li>
+          <li><Link href="/blogs">Blogs</Link></li>
+          <li><Link href="/certificates">Certificates</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>
@@ -61,23 +63,23 @@ export default function Contact() {
             <h2>Contact Information</h2>
             <div className={styles.infoItem}>
               <h3>Email</h3>
-              <a href="mailto:your.email@example.com">your.email@example.com</a>
+              <a href="mailto:buancamillee@gmail.com">buancamillee@gmail.com</a>
             </div>
             <div className={styles.infoItem}>
               <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-                linkedin.com/in/yourprofile
+              <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/camillebuan
               </a>
             </div>
             <div className={styles.infoItem}>
               <h3>GitHub</h3>
-              <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                github.com/yourprofile
+              <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer">
+                github.com/csbuan
               </a>
             </div>
             <div className={styles.infoItem}>
-              <h3>Twitter</h3>
-              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <h3>Discord</h3>
+              <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer">
                 @yourprofile
               </a>
             </div>
@@ -139,7 +141,7 @@ export default function Contact() {
       </section>
 
       <footer className={styles.footer}>
-        <p>&copy; 2024 Camille Buan. All rights reserved.</p>
+        <p>&copy; 2023 Camille Buan. All rights reserved.</p>
       </footer>
     </main>
   );
