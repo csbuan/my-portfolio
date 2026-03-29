@@ -14,31 +14,24 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Project Title 1',
-    description: 'A detailed description of your first project. Explain what it does, the technologies used, and the impact.',
-    technologies: ['React', 'TypeScript', 'CSS'],
-    link: '#',
+    title: 'Survival Prediction: Titanic Logistic Regression',
+    description: 'A machine learning project analyzing the Titanic dataset to predict passenger survival using logistic regression. Includes data preprocessing, feature engineering, model training, and evaluation with Python and Jupyter Notebook.',
+    technologies: ['Python', 'Jupyter', 'Pandas', 'Scikit-learn', 'Matplotlib'],
+    link: 'https://github.com/csbuan/survival-prediction-titanic-logistic-regression',
   },
   {
     id: 2,
-    title: 'Project Title 2',
-    description: 'A detailed description of your second project. Explain what it does, the technologies used, and the impact.',
-    technologies: ['Next.js', 'Node.js', 'PostgreSQL'],
-    link: '#',
+    title: 'Maya vs GCash NLP Analysis',
+    description: 'Natural language processing analysis comparing user reviews of Maya and GCash digital wallets. Uses sentiment analysis and topic modeling to extract insights from Google Play Store reviews.',
+    technologies: ['Python', 'NLP', 'Jupyter', 'NLTK', 'TextBlob'],
+    link: 'https://github.com/csbuan/maya-vs-gcash-nlp-analysis',
   },
   {
     id: 3,
-    title: 'Project Title 3',
-    description: 'A detailed description of your third project. Explain what it does, the technologies used, and the impact.',
-    technologies: ['JavaScript', 'HTML', 'CSS'],
-    link: '#',
-  },
-  {
-    id: 4,
-    title: 'Project Title 4',
-    description: 'A detailed description of your fourth project. Explain what it does, the technologies used, and the impact.',
-    technologies: ['React', 'Firebase', 'Tailwind CSS'],
-    link: '#',
+    title: 'Personal Portfolio Website',
+    description: 'A modern, responsive portfolio website built with Next.js and TypeScript. Showcases projects, skills, and experience with clean design and fast performance.',
+    technologies: ['Next.js', 'TypeScript', 'CSS', 'React'],
+    link: 'https://github.com/csbuan/my-portfolio',
   },
 ];
 

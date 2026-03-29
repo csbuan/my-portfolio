@@ -18,8 +18,11 @@ export default function Home() {
 
       <section className={styles.hero} id="home">
         <div className={styles.heroContent}>
-          <h1>Hi, I&apos;m a Developer</h1>
-          <p>Building amazing things with code</p>
+          <img src="/Users/camillebuan/Coding Projects/my-portfolio/media/my-logo-square.jpeg" alt="Camille logo" />
+          <h1>Hi, I&apos;m a Data Scientist</h1>
+          <p>Turning data into insights, and insights into impact.
+            I build data-driven solutions using analytics, machine learning, and storytelling to solve real-world problems.
+          </p>
           <Link href="/projects" className={styles.cta}>
             View My Work
           </Link>
@@ -30,25 +33,25 @@ export default function Home() {
         <h2>Featured Projects</h2>
         <div className={styles.projectGrid}>
           <div className={styles.projectCard}>
-            <h3>Project 1</h3>
-            <p>A brief description of your first project.</p>
+            <h3>Titanic Survival Prediction</h3>
+            <p>Analyzing Influential Factors That Impact Survival</p>
             <Link href="/projects">Learn More →</Link>
           </div>
           <div className={styles.projectCard}>
-            <h3>Project 2</h3>
-            <p>A brief description of your second project.</p>
+            <h3>Maya vs GCash NLP Analysis</h3>
+            <p>Sentiment analysis and topic modeling of user reviews comparing two popular Philippine digital wallets.</p>
             <Link href="/projects">Learn More →</Link>
           </div>
           <div className={styles.projectCard}>
-            <h3>Project 3</h3>
-            <p>A brief description of your third project.</p>
+            <h3>Personal Portfolio</h3>
+            <p>This responsive website showcasing my data science projects and skills, built with Next.js.</p>
             <Link href="/projects">Learn More →</Link>
           </div>
         </div>
       </section>
 
       <footer className={styles.footer}>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <p>&copy; 2023 Camille Buan. All rights reserved.</p>
       </footer>
     </main>
   );
