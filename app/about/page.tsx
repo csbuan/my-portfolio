@@ -7,7 +7,16 @@ export default function About() {
   return (
     <main className={styles.main}>
       <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>Camille Buan</Link>
+        <Link href="/" className={styles.logo}>
+          <img
+            src="/media/my-logo-square.jpeg"
+            alt="Camille logo"
+            width={32}
+            height={32}
+            style={{ borderRadius: '50%', objectFit: 'cover', marginRight: '0.5rem' }}
+          />
+          <span>amille Buan</span>
+        </Link>
         <ul className={styles.navLinks}>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/projects">Projects</Link></li>
