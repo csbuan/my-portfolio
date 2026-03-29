@@ -68,8 +68,9 @@ export default function Home() {
               <span className={styles.statLabel}>Views</span>
             </div>
             <div className={styles.statItem}>
-              <button onClick={handleLike} className={styles.likeButton} disabled={liked}>
-                <img src="/media/like-logo.png" alt="Likes" className={styles.likeIcon} /> {likes}
+              <img src="/media/like-logo.png?v=2" alt="Likes" className={styles.likeIcon} />
+              <button onClick={handleLike} className={styles.statNumber} disabled={liked}>
+                {likes}
               </button>
               <span className={styles.statLabel}>Likes</span>
             </div>
@@ -78,16 +79,16 @@ export default function Home() {
           <div className={styles.socials}>
             <div className={styles.socialIcons}>
               <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">
-                <img src="/media/email-logo.png" alt="Email" className={styles.socialIcon} />
+                <img src="/media/email-logo.png?v=2" alt="Email" className={styles.socialIcon} />
               </a>
             <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
-              <img src="/media/linkedin-logo.png" alt="LinkedIn" className={styles.socialIcon} />
+              <img src="/media/linkedin-logo.png?v=2" alt="LinkedIn" className={styles.socialIcon} />
             </a>
             <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
-              <img src="/media/github-logo.png" alt="GitHub" className={styles.socialIcon} />
+              <img src="/media/github-logo.png?v=2" alt="GitHub" className={styles.socialIcon} />
             </a>
             <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">
-              <img src="/media/discord-logo.png" alt="Discord" className={styles.socialIcon} />
+              <img src="/media/discord-logo.png?v=2" alt="Discord" className={styles.socialIcon} />
             </a>
           </div>
           </div>
