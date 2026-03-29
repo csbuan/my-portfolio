@@ -63,22 +63,31 @@ export default function Home() {
 
           <section className={styles.stats}>
             <div className={styles.statItem}>
+              <img src="/media/view-logo.png" alt="Views" className={styles.statIcon} />
               <span className={styles.statNumber}>{views}</span>
               <span className={styles.statLabel}>Views</span>
             </div>
             <div className={styles.statItem}>
               <button onClick={handleLike} className={styles.likeButton} disabled={liked}>
-                {liked ? '❤️' : '🤍'} {likes}
+                <img src="/media/like-logo.png" alt="Likes" className={styles.statIconSmall} /> {likes}
               </button>
               <span className={styles.statLabel}>Likes</span>
             </div>
           </section>
 
           <div className={styles.socials}>
-            <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">✉️</a>
-            <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">in</a>
-            <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">GH</a>
-            <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">🎮</a>
+            <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">
+              <img src="/media/email-logo.png" alt="Email" className={styles.socialIcon} />
+            </a>
+            <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
+              <img src="/media/linked-logo.png" alt="LinkedIn" className={styles.socialIcon} />
+            </a>
+            <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
+              <img src="/media/github-logo.png" alt="GitHub" className={styles.socialIcon} />
+            </a>
+            <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">
+              <img src="/media/discord-logo.png" alt="Discord" className={styles.socialIcon} />
+            </a>
           </div>
 
           <Link href="/projects" className={styles.cta}>

@@ -214,6 +214,24 @@
   font-size: 1rem;
 }
 
+.statIcon {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 0.25rem;
+}
+
+.statIconSmall {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.socialIcon {
+  width: 26px;
+  height: 26px;
+}
+
 .likeButton {
   background: none;
   border: none;
