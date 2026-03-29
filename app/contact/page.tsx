@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <main className={styles.main}>
       <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>Portfolio</Link>
+        <Link href="/" className={styles.logo}>Camille Buan</Link>
         <ul className={styles.navLinks}>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/projects">Projects</Link></li>
@@ -130,7 +130,7 @@ export default function Contact() {
       </section>
 
       <footer className={styles.footer}>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <p>&copy; 2024 Camille Buan. All rights reserved.</p>
       </footer>
     </main>
   );
