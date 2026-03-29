@@ -28,10 +28,16 @@ export default function Home() {
       <section className={styles.hero} id="home">
         <div className={styles.heroContent}>
           <img src="/media/my-logo-square.jpeg" alt="Camille logo" width={90} height={90} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-          <h1>Senior Data Analyst</h1>
-          <p>
-            Camille Buan<br />
-          </p>
+          <h1>Camille Buan</h1>
+          <p>Senior Data Analyst | Data Science</p>
+
+          <div className={styles.socials}>
+            <a href="mailto:camille@example.com" className={styles.socialLink} aria-label="Email">✉️</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">in</a>
+            <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">GH</a>
+            <a href="https://discord.com/users/yourid" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">🎮</a>
+          </div>
+
           <Link href="/projects" className={styles.cta}>
             View My Work
           </Link>
@@ -60,12 +66,12 @@ export default function Home() {
       </section>
 
       <section className={styles.socials}>
-        <p>Geographic Information Systems | Data Science</p>
+        <p>Senior Data Analyst | Data Science</p>
         <div className={styles.socialIcons}>
-          <a href="mailto:camille@example.com" aria-label="Email" className={styles.socialLink}>✉️</a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.socialLink}>in</a>
+          <a href="mailto:buancamillee@gmail.com" aria-label="Email" className={styles.socialLink}>✉️</a>
+          <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.socialLink}>in</a>
           <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={styles.socialLink}>GH</a>
-          <a href="https://discord.com/users/yourid" target="_blank" rel="noopener noreferrer" aria-label="Discord" className={styles.socialLink}>🎮</a>
+          <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" aria-label="Discord" className={styles.socialLink}>🎮</a>
         </div>
       </section>
       <footer className={styles.footer}>
