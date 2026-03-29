@@ -63,15 +63,19 @@ export default function Home() {
 
           <section className={styles.stats}>
             <div className={styles.statItem}>
-              <img src="/media/view-logo.png?v=2" alt="Views" className={styles.viewIcon} />
-              <span className={styles.statNumber}>{views}</span>
+              <div className={styles.statDisplay}>
+                <img src="/media/view-logo.png?v=2" alt="Views" className={styles.viewIcon} />
+                <span className={styles.statNumber}>{views}</span>
+              </div>
               <span className={styles.statLabel}>Views</span>
             </div>
             <div className={styles.statItem}>
-              <img src="/media/like-logo.png?v=2" alt="Likes" className={styles.likeIcon} />
-              <button onClick={handleLike} className={styles.statNumber} disabled={liked}>
-                {likes}
-              </button>
+              <div className={styles.statDisplay}>
+                <img src="/media/like-logo.png?v=2" alt="Likes" className={styles.likeIcon} />
+                <button onClick={handleLike} className={styles.statNumber} disabled={liked}>
+                  {likes}
+                </button>
+              </div>
               <span className={styles.statLabel}>Likes</span>
             </div>
           </section>

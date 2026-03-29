@@ -207,11 +207,28 @@
   justify-content: center;
 }
 
+.statDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .viewIcon,
-.likeIcon,
-.statIcon {
-  display: block;
-  margin: 0 auto 0.35rem;
+.likeIcon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.viewIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.likeIcon {
+  width: 30px;
+  height: 30px;
 }
 
 .statNumber {
@@ -242,18 +259,6 @@
   padding: 4px;
   border-radius: 50%;
   background: #071730;
-}
-
-.viewIcon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 0.25rem;
-}
-
-.likeIcon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 0.25rem;
 }
 
 .statIconSmall {
