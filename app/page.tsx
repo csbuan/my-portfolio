@@ -1,10 +1,37 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
 export default function Home() {
-  return (
+  const [views, setViews] = useState(0);
+  const [likes, setLikes] = useState(0);
+  const [liked, setLiked] = useState(false);
+
+  useEffect(() => {
+    // Fetch and increment view count
+    fetch('https://api.countapi.xyz/hit/csbuan-portfolio/views')
+      .then(res => res.json())
+      .then(data => setViews(data.value))
+      .catch(err => console.error('Error fetching views:', err));
+
+    // Load likes from localStorage
+    const storedLikes = localStorage.getItem('portfolioLikes');
+    if (storedLikes) setLikes(parseInt(storedLikes));
+    const hasLiked = localStorage.getItem('hasLiked');
+    if (hasLiked) setLiked(true);
+  }, []);
+
+  const handleLike = () => {
+    if (!liked) {
+      const newLikes = likes + 1;
+      setLikes(newLikes);
+      setLiked(true);
+      localStorage.setItem('portfolioLikes', newLikes.toString());
+      localStorage.setItem('hasLiked', 'true');
+    }
+  };
     <main className={styles.main}>
       <nav className={styles.nav}>
         <Link href="/" className={styles.logo}>
@@ -62,6 +89,19 @@ export default function Home() {
             <p>This responsive website showcasing my data science projects and skills, built with Next.js.</p>
             <Link href="/projects">Learn More →</Link>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.stats}>
+        <div className={styles.statItem}>
+          <span className={styles.statNumber}>{views}</span>
+          <span className={styles.statLabel}>Views</span>
+        </div>
+        <div className={styles.statItem}>
+          <button onClick={handleLike} className={styles.likeButton} disabled={liked}>
+            {liked ? '❤️' : '🤍'} {likes}
+          </button>
+          <span className={styles.statLabel}>Likes</span>
         </div>
       </section>
 

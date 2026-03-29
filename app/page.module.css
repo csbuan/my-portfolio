@@ -191,6 +191,42 @@
 }
 
 
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-sky);
+}
+
+.statLabel {
+  display: block;
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+.likeButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-sky);
+}
+
+.likeButton:disabled {
+  cursor: not-allowed;
+}
+
+
 @media (max-width: 768px) {
   .navLinks {
     gap: 1rem;
