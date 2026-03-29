@@ -223,6 +223,25 @@
   background: #071730;
 }
 
+.viewIcon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0.25rem;
+  padding: 5px;
+  border-radius: 50%;
+  background: #071730;
+}
+
+.likeIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+  padding: 4px;
+  border-radius: 50%;
+  background: #071730;
+}
+
 .statIconSmall {
   width: 24px;
   height: 24px;
