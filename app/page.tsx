@@ -32,6 +32,8 @@ export default function Home() {
       localStorage.setItem('hasLiked', 'true');
     }
   };
+
+  return (
     <main className={styles.main}>
       <nav className={styles.nav}>
         <Link href="/" className={styles.logo}>
