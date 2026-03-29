@@ -28,10 +28,9 @@ export default function Home() {
       <section className={styles.hero} id="home">
         <div className={styles.heroContent}>
           <img src="/media/my-logo-square.jpeg" alt="Camille logo" width={90} height={90} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-          <h1>Hi, I&apos;m a Data Scientist</h1>
+          <h1>Senior Data Analyst</h1>
           <p>
-            Turning data into insights, and insights into impact.<br />
-            I build data-driven solutions using analytics, machine learning, and storytelling to solve real-world problems.
+            Camille Buan<br />
           </p>
           <Link href="/projects" className={styles.cta}>
             View My Work
@@ -60,6 +59,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.socials}>
+        <p>Geographic Information Systems | Data Science</p>
+        <div className={styles.socialIcons}>
+          <a href="mailto:camille@example.com" aria-label="Email" className={styles.socialLink}>✉️</a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.socialLink}>in</a>
+          <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={styles.socialLink}>GH</a>
+          <a href="https://discord.com/users/yourid" target="_blank" rel="noopener noreferrer" aria-label="Discord" className={styles.socialLink}>🎮</a>
+        </div>
+      </section>
       <footer className={styles.footer}>
         <p>&copy; 2023 Camille Buan. All rights reserved.</p>
       </footer>
