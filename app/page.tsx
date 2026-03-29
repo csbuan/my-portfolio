@@ -7,7 +7,16 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <nav className={styles.nav}>
-        <div className={styles.logo}>Portfolio</div>
+        <Link href="/" className={styles.logo}>
+          <img
+            src="/media/my-logo-square.jpeg"
+            alt="Camille logo"
+            width={32}
+            height={32}
+            style={{ borderRadius: '50%', objectFit: 'cover', marginRight: '0.5rem' }}
+          />
+          <span>Portfolio</span>
+        </Link>
         <ul className={styles.navLinks}>
           <li><Link href="#home">Home</Link></li>
           <li><Link href="/projects">Projects</Link></li>
