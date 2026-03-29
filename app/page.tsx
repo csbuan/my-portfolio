@@ -32,10 +32,10 @@ export default function Home() {
           <p>Senior Data Analyst | Data Science</p>
 
           <div className={styles.socials}>
-            <a href="mailto:camille@example.com" className={styles.socialLink} aria-label="Email">✉️</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">in</a>
+            <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">✉️</a>
+            <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">in</a>
             <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">GH</a>
-            <a href="https://discord.com/users/yourid" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">🎮</a>
+            <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">🎮</a>
           </div>
 
           <Link href="/projects" className={styles.cta}>
