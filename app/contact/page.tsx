@@ -80,7 +80,7 @@ export default function Contact() {
             <div className={styles.infoItem}>
               <h3>Discord</h3>
               <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer">
-                @yourprofile
+                @csbuan
               </a>
             </div>
           </div>

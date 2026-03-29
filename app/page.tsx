@@ -47,6 +47,7 @@ export default function Home() {
           <span>Portfolio</span>
         </Link>
         <ul className={styles.navLinks}>
+          <li><Link href="/">Home</Link></li>
           <li><Link href="/projects">Projects</Link></li>
           <li><Link href="/blogs">Blogs</Link></li>
           <li><Link href="/certificates">Certificates</Link></li>
