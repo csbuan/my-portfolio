@@ -1,0 +1,116 @@
+.navWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-bg-overlay);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 200;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--color-sky) 0%, var(--color-white) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.menuToggle {
+  display: none;
+  width: 40px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menuToggle span {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menuToggle.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menuToggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.navLinks a:hover {
+  color: var(--color-sky);
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(5, 10, 20, 0.95);
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navLinks.active {
+    max-height: 340px;
+  }
+
+  .navLinks li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .navLinks a {
+    display: block;
+    padding: 0.9rem 1.25rem;
+  }
+}
