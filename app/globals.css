@@ -10,18 +10,32 @@ body {
   overflow-x: hidden;
 }
 
+/* Ritz Paris palette — Regal Navy, Opulent Gold, Ethereal Ivory */
 :root {
-  --color-navy: #2F4156;
-  --color-sky: #C8D9E6;
-  --color-white: #FFFFFF;
-  --color-muted: #B3C8DA;
-  --color-bg-overlay: rgba(47, 65, 86, 0.95);
-  --color-border: rgba(200, 217, 230, 0.35);
+  --color-navy: #0a1d4b;
+  --color-gold: #cc9e4a;
+  --color-ivory: #f7ebe0;
+  /* Legacy names used across modules (mapped to the palette) */
+  --color-white: var(--color-ivory);
+  --color-sky: #e5d0bd;
+  --color-muted: rgba(247, 235, 224, 0.55);
+  --color-bg-overlay: rgba(10, 29, 75, 0.97);
+  --color-border: rgba(204, 158, 74, 0.38);
+  --color-border-ivory: rgba(247, 235, 224, 0.14);
+  --gradient-heading: linear-gradient(135deg, var(--color-gold) 0%, var(--color-ivory) 100%);
+  --gradient-cta: linear-gradient(135deg, var(--color-gold) 0%, #e8c77b 100%);
+  --shadow-gold: 0 14px 44px rgba(204, 158, 74, 0.18);
 }
 
 body {
-  background: var(--color-navy);
-  color: var(--color-white);
+  background-color: var(--color-navy);
+  background-image: radial-gradient(
+      ellipse 100% 70% at 50% -15%,
+      rgba(204, 158, 74, 0.09),
+      transparent 55%
+    ),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(10, 29, 75, 0.9), transparent 45%);
+  color: var(--color-ivory);
 }
 
 a {
