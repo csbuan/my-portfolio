@@ -4,10 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import NavBar from './components/NavBar';
-
-const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
-const VIEWS_KEY = 'csbuan-portfolio-views';
-const LIKES_KEY = 'csbuan-portfolio-likes';
+import { COUNT_API, VIEWS_KEY, LIKES_KEY, VIEW_COUNT_EVENT } from '@/lib/counts';
 
 export default function Home() {
   const [views, setViews] = useState(0);
@@ -15,9 +12,21 @@ export default function Home() {
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
-    fetch(`${COUNT_API}/hit/${VIEWS_KEY}`)
-      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
-      .then((data) => setViews(data.value))
+    const onViewCount = (e: Event) => {
+      const v = (e as CustomEvent<number>).detail;
+      if (typeof v === 'number') setViews((prev) => Math.max(prev, v));
+    };
+    window.addEventListener(VIEW_COUNT_EVENT, onViewCount);
+
+    fetch(`${COUNT_API}/get/${VIEWS_KEY}`)
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok || data.error) return;
+        return data.value as number;
+      })
+      .then((v) => {
+        if (typeof v === 'number') setViews((prev) => Math.max(prev, v));
+      })
       .catch((err) => console.error('Error fetching views:', err));
 
     fetch(`${COUNT_API}/get/${LIKES_KEY}`)
@@ -30,6 +39,8 @@ export default function Home() {
       .catch((err) => console.error('Error fetching likes:', err));
 
     if (localStorage.getItem('hasLiked')) setLiked(true);
+
+    return () => window.removeEventListener(VIEW_COUNT_EVENT, onViewCount);
   }, []);
 
   const handleLike = () => {

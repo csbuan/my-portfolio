@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import ViewTracker from './components/ViewTracker';
 
 export const metadata: Metadata = {
   title: 'My Portfolio',
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ViewTracker />
         {children}
       </body>
     </html>
