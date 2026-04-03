@@ -5,33 +5,43 @@ import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import NavBar from '../components/NavBar';
 
+const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
+const VIEWS_KEY = 'csbuan-portfolio-views';
+const LIKES_KEY = 'csbuan-portfolio-likes';
+
 export default function Home() {
   const [views, setViews] = useState(0);
   const [likes, setLikes] = useState(0);
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
-    // Fetch and increment view count
-    fetch('https://api.countapi.xyz/hit/csbuan-portfolio/views')
-      .then(res => res.json())
-      .then(data => setViews(data.value))
-      .catch(err => console.error('Error fetching views:', err));
+    fetch(`${COUNT_API}/hit/${VIEWS_KEY}`)
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
+      .then((data) => setViews(data.value))
+      .catch((err) => console.error('Error fetching views:', err));
 
-    // Load likes from localStorage
-    const storedLikes = localStorage.getItem('portfolioLikes');
-    if (storedLikes) setLikes(parseInt(storedLikes));
-    const hasLiked = localStorage.getItem('hasLiked');
-    if (hasLiked) setLiked(true);
+    fetch(`${COUNT_API}/get/${LIKES_KEY}`)
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok || data.error) return 0;
+        return data.value;
+      })
+      .then(setLikes)
+      .catch((err) => console.error('Error fetching likes:', err));
+
+    if (localStorage.getItem('hasLiked')) setLiked(true);
   }, []);
 
   const handleLike = () => {
-    if (!liked) {
-      const newLikes = likes + 1;
-      setLikes(newLikes);
-      setLiked(true);
-      localStorage.setItem('portfolioLikes', newLikes.toString());
-      localStorage.setItem('hasLiked', 'true');
-    }
+    if (liked) return;
+    fetch(`${COUNT_API}/hit/${LIKES_KEY}`)
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
+      .then((data) => {
+        setLikes(data.value);
+        setLiked(true);
+        localStorage.setItem('hasLiked', 'true');
+      })
+      .catch((err) => console.error('Error incrementing likes:', err));
   };
 
   return (
