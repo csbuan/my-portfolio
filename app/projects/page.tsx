@@ -148,22 +148,24 @@ export default function Projects() {
                     </div>
                     <div className={styles.projectStat}>
                       <div className={styles.projectStatDisplay}>
-                        <img
-                          src="/media/like-logo.png?v=2"
-                          alt=""
-                          className={styles.likeIcon}
-                          width={22}
-                          height={22}
-                        />
                         <button
                           type="button"
-                          className={styles.projectLikeButton}
+                          className={styles.projectLikeIconButton}
                           disabled={projectLiked}
                           onClick={() => handleProjectLike(project.id)}
                           aria-label={projectLiked ? 'Liked' : 'Like this project'}
                         >
-                          {likes}
+                          <img
+                            src="/media/like-logo.png?v=2"
+                            alt=""
+                            className={styles.likeIcon}
+                            width={22}
+                            height={22}
+                          />
                         </button>
+                        <span className={styles.projectStatNumber} aria-hidden="true">
+                          {likes}
+                        </span>
                       </div>
                       <span className={styles.projectStatLabel}>Likes</span>
                     </div>
