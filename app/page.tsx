@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from './page.module.css';
-import NavBar from '../components/NavBar';
+import NavBar from './components/NavBar';
 
 const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
 const VIEWS_KEY = 'csbuan-portfolio-views';

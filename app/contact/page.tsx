@@ -1,9 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 import styles from './contact.module.css';
-import NavBar from '../../components/NavBar';
+import NavBar from '../components/NavBar';
 
 export default function Contact() {
   const [formData, setFormData] = useState({

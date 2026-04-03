@@ -1,8 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import styles from './about.module.css';
-import NavBar from '../../components/NavBar';
+import NavBar from '../components/NavBar';
 
 export default function About() {
   return (

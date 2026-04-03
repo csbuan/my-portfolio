@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import styles from './projects.module.css';
-import NavBar from '../../components/NavBar';
+import NavBar from '../components/NavBar';
 
 interface Project {
   id: number;
