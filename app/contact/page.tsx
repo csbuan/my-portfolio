@@ -11,6 +11,8 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,13 +24,40 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Implement form submission (e.g., send email service)
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
+    setSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/buancamillee@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Portfolio Contact Form: ${formData.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      const result = await response.json();
+      if (!response.ok || result?.success !== 'true') {
+        throw new Error('Form submission failed');
+      }
+
+      setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setSubmitError('Sorry, message failed to send. Please email me directly at buancamillee@gmail.com.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -108,14 +137,17 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            <button type="submit" className={styles.submitButton}>
-              Send Message
+            <button type="submit" className={styles.submitButton} disabled={submitting}>
+              {submitting ? 'Sending...' : 'Send Message'}
             </button>
 
             {submitted && (
               <p className={styles.successMessage}>
                 Thanks for reaching out! I&apos;ll get back to you soon.
               </p>
+            )}
+            {submitError && (
+              <p className={styles.errorMessage}>{submitError}</p>
             )}
           </form>
         </div>
