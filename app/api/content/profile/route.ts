@@ -35,7 +35,10 @@ export async function PUT(request: Request) {
 
     await saveProfile(body);
     return NextResponse.json(body);
-  } catch {
-    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to save profile';
+    const status = message.includes('Redis') || message.includes('configured') ? 503 : 400;
+    console.error('PUT /api/content/profile:', err);
+    return NextResponse.json({ error: message }, { status });
   }
 }

@@ -32,7 +32,10 @@ export async function PUT(request: Request) {
 
     await saveProjects(projects);
     return NextResponse.json(projects);
-  } catch {
-    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to save projects';
+    const status = message.includes('Redis') || message.includes('configured') ? 503 : 400;
+    console.error('PUT /api/content/projects:', err);
+    return NextResponse.json({ error: message }, { status });
   }
 }

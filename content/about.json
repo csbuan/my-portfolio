@@ -1,5 +1,5 @@
 {
-  "bio": "Hi, I'm Camille, a data professional with 6+ years of experience turning complex, messy data into decisions that actually move businesses forward. I specialize in data analytics, machine learning, and automation, building everything from end-to-end pipelines to AI-driven solutions that eliminate inefficiencies and surface insights that matter. I bring a rare combination of technical depth and finance domain expertise, which means I don't just build data solutions. I understand the business problems behind them.",
+  "bio": "Hi, I'm Camille, a data professional with 6+ years of experience turning complex, messy data into decisions that actually move businesses forward. I specialize in data engineering, analytics engineering, machine learning, and automation, building everything from end-to-end pipelines to AI-driven solutions that eliminate inefficiencies and surface insights that matter. I bring a rare combination of technical depth and finance domain expertise, which means I don't just build data solutions. I understand the business problems behind them.",
   "specializations": [
     {
       "title": "Building Data Infrastructure That Scales",
@@ -21,43 +21,96 @@
   "skillGroups": [
     {
       "title": "Data & Analytics",
-      "items": ["Python", "SQL (SQLite, MySQL)", "Pandas, NumPy, SciPy", "Matplotlib, Seaborn", "Google Apps Script"]
+      "items": [
+        "Python",
+        "SQL (SQLite, MySQL)",
+        "Pandas, NumPy, SciPy",
+        "Matplotlib, Seaborn",
+        "Google Apps Script"
+      ]
     },
     {
       "title": "Business Intelligence & Visualization",
-      "items": ["Tableau", "Power BI (DAX, Power Query)", "ClicData", "Streamlit", "DOMO"]
+      "items": [
+        "Tableau",
+        "Power BI (DAX, Power Query)",
+        "ClicData",
+        "Streamlit",
+        "DOMO"
+      ]
     },
     {
       "title": "Machine Learning & AI",
-      "items": ["Linear and Logistic Regression", "K-Means Clustering", "Sentiment Analysis", "Topic Modeling", "Text Classification, NLP"]
+      "items": [
+        "Linear and Logistic Regression",
+        "K-Means Clustering",
+        "Sentiment Analysis",
+        "Topic Modeling",
+        "Text Classification, NLP"
+      ]
     },
     {
       "title": "Data Engineering & Pipelines",
-      "items": ["ETL and ELT Pipelines", "API Integration", "Data Reconciliation", "Process Automation", "Apache Airflow (Learning), dbt (Learning)"]
+      "items": [
+        "ETL and ELT Pipelines",
+        "API Integration",
+        "Data Reconciliation",
+        "Process Automation",
+        "Apache Airflow (Learning), dbt (Learning)"
+      ]
     },
     {
       "title": "OCR & Document Processing",
-      "items": ["Tesseract", "OCRmyPDF", "Unstructured Data Extraction"]
+      "items": [
+        "Tesseract",
+        "OCRmyPDF",
+        "Unstructured Data Extraction"
+      ]
     },
     {
       "title": "AI Tools",
-      "items": ["Claude Code", "Cursor", "DOMO AI", "Antigravity"]
+      "items": [
+        "Claude Code",
+        "Cursor",
+        "DOMO AI",
+        "Antigravity"
+      ]
     },
     {
       "title": "Cloud & Data Warehousing",
-      "items": ["Microsoft Azure (AZ-900 in progress)", "Snowflake"]
+      "items": [
+        "Microsoft Azure (AZ-900 in progress)",
+        "Snowflake"
+      ]
     },
     {
       "title": "Developer & Collaboration Tools",
-      "items": ["Git and GitHub", "Jupyter Notebook", "VS Code", "Excel", "Google Workspace, Microsoft 365"]
+      "items": [
+        "Git and GitHub",
+        "Jupyter Notebook",
+        "VS Code",
+        "Excel",
+        "Google Workspace, Microsoft 365"
+      ]
     },
     {
       "title": "Project Management",
-      "items": ["JIRA", "Monday.com", "ClickUp", "Trello"]
+      "items": [
+        "JIRA",
+        "Monday.com",
+        "ClickUp",
+        "Trello"
+      ]
     },
     {
       "title": "Enterprise & ERP Systems",
-      "items": ["Xero", "Oracle", "Salesforce", "EDI", "RevPro (Zuora)"]
+      "items": [
+        "Xero",
+        "Oracle",
+        "Salesforce",
+        "EDI",
+        "RevPro (Zuora)"
+      ]
     }
   ]
 }
