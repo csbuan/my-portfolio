@@ -38,10 +38,10 @@ export function verifySessionToken(token: string | undefined): boolean {
 }
 
 export function verifyPassword(password: string): boolean {
-  const adminPassword = process.env.ADMIN_PASSWORD;
+  const adminPassword = process.env.ADMIN_PASSWORD?.trim();
   if (!adminPassword) return false;
 
-  const a = Buffer.from(password);
+  const a = Buffer.from(password.trim());
   const b = Buffer.from(adminPassword);
   if (a.length !== b.length) return false;
 
