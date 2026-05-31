@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './NavBar.module.css';
+import { useAdmin } from './AdminProvider';
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const { isAdmin } = useAdmin();
 
   return (
     <header className={styles.navWrapper}>
@@ -39,6 +41,13 @@ export default function NavBar() {
           <li><Link href="/certificates" onClick={() => setOpen(false)}>Certificates</Link></li>
           <li><Link href="/about" onClick={() => setOpen(false)}>About</Link></li>
           <li><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
+          {isAdmin && (
+            <li>
+              <Link href="/admin" onClick={() => setOpen(false)} className={styles.adminLink}>
+                Admin
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

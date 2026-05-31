@@ -10,49 +10,25 @@ import {
   projectLikeStorageKey,
   projectViewsKey,
 } from '@/lib/counts';
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  link?: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Survival Prediction: Titanic Logistic Regression',
-    description:
-      'A machine learning project analyzing the Titanic dataset to predict passenger survival using logistic regression. Includes data preprocessing, feature engineering, model training, and evaluation with Python and Jupyter Notebook.',
-    technologies: ['Python', 'Jupyter', 'Pandas', 'Scikit-learn', 'Matplotlib'],
-    link: 'https://github.com/csbuan/survival-prediction-titanic-logistic-regression',
-  },
-  {
-    id: 2,
-    title: 'Maya vs GCash NLP Analysis',
-    description:
-      'Natural language processing analysis comparing user reviews of Maya and GCash digital wallets. Uses sentiment analysis and topic modeling to extract insights from Google Play Store reviews.',
-    technologies: ['Python', 'NLP', 'Jupyter', 'NLTK', 'TextBlob'],
-    link: 'https://github.com/csbuan/maya-vs-gcash-nlp-analysis',
-  },
-  {
-    id: 3,
-    title: 'Personal Portfolio Website',
-    description:
-      'A modern, responsive portfolio website built with Next.js and TypeScript. Showcases projects, skills, and experience with clean design and fast performance.',
-    technologies: ['Next.js', 'TypeScript', 'CSS', 'React'],
-    link: 'https://github.com/csbuan/my-portfolio',
-  },
-];
+import type { Project } from '@/lib/content-types';
 
 type ProjectStats = { views: number; likes: number };
 
 export default function Projects() {
+  const [projects, setProjects] = useState<Project[]>([]);
   const [stats, setStats] = useState<Record<number, ProjectStats>>({});
   const [liked, setLiked] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
+    fetch('/api/content/projects')
+      .then((res) => (res.ok ? res.json() : []))
+      .then(setProjects)
+      .catch((err) => console.error('Error loading projects:', err));
+  }, []);
+
+  useEffect(() => {
+    if (projects.length === 0) return;
+
     const likedInit: Record<number, boolean> = {};
     projects.forEach((p) => {
       if (localStorage.getItem(projectLikeStorageKey(p.id))) likedInit[p.id] = true;
@@ -72,7 +48,7 @@ export default function Projects() {
       );
       setStats(next);
     })();
-  }, []);
+  }, [projects]);
 
   const handleProjectViewClick = useCallback((projectId: number) => {
     countHit(projectViewsKey(projectId), { keepalive: true })

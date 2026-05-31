@@ -5,11 +5,26 @@ import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import NavBar from './components/NavBar';
 import { COUNT_API, VIEWS_KEY, LIKES_KEY, VIEW_COUNT_EVENT } from '@/lib/counts';
+import type { ProfileContent, Project } from '@/lib/content-types';
 
 export default function Home() {
   const [views, setViews] = useState(0);
   const [likes, setLikes] = useState(0);
   const [liked, setLiked] = useState(false);
+  const [profile, setProfile] = useState<ProfileContent | null>(null);
+  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    fetch('/api/content/profile')
+      .then((res) => (res.ok ? res.json() : null))
+      .then(setProfile)
+      .catch((err) => console.error('Error loading profile:', err));
+
+    fetch('/api/content/projects')
+      .then((res) => (res.ok ? res.json() : []))
+      .then((projects: Project[]) => setFeaturedProjects(projects.filter((p) => p.featured)))
+      .catch((err) => console.error('Error loading projects:', err));
+  }, []);
 
   useEffect(() => {
     const onViewCount = (e: Event) => {
@@ -62,8 +77,8 @@ export default function Home() {
       <section className={styles.hero} id="home">
         <div className={styles.heroContent}>
           <img src="/media/my-logo-square.jpeg" alt="Camille logo" width={90} height={90} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-          <h1>Camille Buan</h1>
-          <p>Senior Data Analyst | Data Science</p>
+          <h1>{profile?.name ?? 'Camille Buan'}</h1>
+          <p>{profile?.title ?? 'Senior Data Analyst | Data Science'}</p>
 
           <section className={styles.stats}>
             <div className={styles.statItem}>
@@ -94,19 +109,27 @@ export default function Home() {
 
           <div className={styles.socials}>
             <div className={styles.socialIcons}>
-              <a href="mailto:buancamillee@gmail.com" className={styles.socialLink} aria-label="Email">
-                <img src="/media/email-logo.png?v=2" alt="Email" className={styles.socialIcon} />
-              </a>
-            <a href="https://www.linkedin.com/in/camillebuan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
-              <img src="/media/linkedin-logo.png?v=2" alt="LinkedIn" className={styles.socialIcon} />
-            </a>
-            <a href="https://github.com/csbuan" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
-              <img src="/media/github-logo.png?v=2" alt="GitHub" className={styles.socialIcon} />
-            </a>
-            <a href="https://discord.com/users/871335959483015210" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">
-              <img src="/media/discord-logo.png?v=2" alt="Discord" className={styles.socialIcon} />
-            </a>
-          </div>
+              {profile?.email && (
+                <a href={`mailto:${profile.email}`} className={styles.socialLink} aria-label="Email">
+                  <img src="/media/email-logo.png?v=2" alt="Email" className={styles.socialIcon} />
+                </a>
+              )}
+              {profile?.linkedin && (
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
+                  <img src="/media/linkedin-logo.png?v=2" alt="LinkedIn" className={styles.socialIcon} />
+                </a>
+              )}
+              {profile?.github && (
+                <a href={profile.github} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
+                  <img src="/media/github-logo.png?v=2" alt="GitHub" className={styles.socialIcon} />
+                </a>
+              )}
+              {profile?.discord && (
+                <a href={profile.discord} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Discord">
+                  <img src="/media/discord-logo.png?v=2" alt="Discord" className={styles.socialIcon} />
+                </a>
+              )}
+            </div>
           </div>
 
           <Link href="/projects" className={styles.cta}>
@@ -118,24 +141,15 @@ export default function Home() {
       <section className={styles.featured}>
         <h2>Featured Projects</h2>
         <div className={styles.projectGrid}>
-          <div className={styles.projectCard}>
-            <h3>Titanic Survival Prediction</h3>
-            <p>Analyzing Influential Factors That Impact Survival</p>
-            <Link href="/projects">Learn More →</Link>
-          </div>
-          <div className={styles.projectCard}>
-            <h3>Maya vs GCash NLP Analysis</h3>
-            <p>Sentiment analysis and topic modeling of user reviews comparing two popular Philippine digital wallets.</p>
-            <Link href="/projects">Learn More →</Link>
-          </div>
-          <div className={styles.projectCard}>
-            <h3>Personal Portfolio</h3>
-            <p>This responsive website showcasing my data science projects and skills, built with Next.js.</p>
-            <Link href="/projects">Learn More →</Link>
-          </div>
+          {featuredProjects.map((project) => (
+            <div key={project.id} className={styles.projectCard}>
+              <h3>{project.title}</h3>
+              <p>{project.featuredBlurb || project.description}</p>
+              <Link href="/projects">Learn More →</Link>
+            </div>
+          ))}
         </div>
       </section>
-
 
       <footer className={styles.footer}>
         <p>&copy; 2023 Camille Buan. All rights reserved.</p>

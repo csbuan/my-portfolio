@@ -83,6 +83,11 @@
   color: var(--color-gold);
 }
 
+.adminLink {
+  color: var(--color-gold) !important;
+  font-weight: 600 !important;
+}
+
 @media (max-width: 768px) {
   .menuToggle {
     display: flex;

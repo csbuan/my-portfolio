@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Survival Prediction: Titanic Logistic Regression",
+    "description": "A machine learning project analyzing the Titanic dataset to predict passenger survival using logistic regression. Includes data preprocessing, feature engineering, model training, and evaluation with Python and Jupyter Notebook.",
+    "technologies": ["Python", "Jupyter", "Pandas", "Scikit-learn", "Matplotlib"],
+    "link": "https://github.com/csbuan/survival-prediction-titanic-logistic-regression",
+    "featured": true,
+    "featuredBlurb": "Analyzing Influential Factors That Impact Survival"
+  },
+  {
+    "id": 2,
+    "title": "Maya vs GCash NLP Analysis",
+    "description": "Natural language processing analysis comparing user reviews of Maya and GCash digital wallets. Uses sentiment analysis and topic modeling to extract insights from Google Play Store reviews.",
+    "technologies": ["Python", "NLP", "Jupyter", "NLTK", "TextBlob"],
+    "link": "https://github.com/csbuan/maya-vs-gcash-nlp-analysis",
+    "featured": true,
+    "featuredBlurb": "Sentiment analysis and topic modeling of user reviews comparing two popular Philippine digital wallets."
+  },
+  {
+    "id": 3,
+    "title": "Personal Portfolio Website",
+    "description": "A modern, responsive portfolio website built with Next.js and TypeScript. Showcases projects, skills, and experience with clean design and fast performance.",
+    "technologies": ["Next.js", "TypeScript", "CSS", "React"],
+    "link": "https://github.com/csbuan/my-portfolio",
+    "featured": true,
+    "featuredBlurb": "This responsive website showcasing my data science projects and skills, built with Next.js."
+  }
+]
