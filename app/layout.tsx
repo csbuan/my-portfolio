@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import ViewTracker from './components/ViewTracker';
 import { AdminProvider } from './components/AdminProvider';
 
 export const metadata: Metadata = {
@@ -17,7 +16,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AdminProvider>
-          <ViewTracker />
           {children}
         </AdminProvider>
       </body>

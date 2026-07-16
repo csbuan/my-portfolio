@@ -4,13 +4,9 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import NavBar from './components/NavBar';
-import { COUNT_API, VIEWS_KEY, LIKES_KEY, VIEW_COUNT_EVENT } from '@/lib/counts';
 import type { ProfileContent, Project } from '@/lib/content-types';
 
 export default function Home() {
-  const [views, setViews] = useState(0);
-  const [likes, setLikes] = useState(0);
-  const [liked, setLiked] = useState(false);
   const [profile, setProfile] = useState<ProfileContent | null>(null);
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
 
@@ -26,50 +22,6 @@ export default function Home() {
       .catch((err) => console.error('Error loading projects:', err));
   }, []);
 
-  useEffect(() => {
-    const onViewCount = (e: Event) => {
-      const v = (e as CustomEvent<number>).detail;
-      if (typeof v === 'number') setViews((prev) => Math.max(prev, v));
-    };
-    window.addEventListener(VIEW_COUNT_EVENT, onViewCount);
-
-    fetch(`${COUNT_API}/get/${VIEWS_KEY}`)
-      .then(async (res) => {
-        const data = await res.json();
-        if (!res.ok || data.error) return;
-        return data.value as number;
-      })
-      .then((v) => {
-        if (typeof v === 'number') setViews((prev) => Math.max(prev, v));
-      })
-      .catch((err) => console.error('Error fetching views:', err));
-
-    fetch(`${COUNT_API}/get/${LIKES_KEY}`)
-      .then(async (res) => {
-        const data = await res.json();
-        if (!res.ok || data.error) return 0;
-        return data.value;
-      })
-      .then(setLikes)
-      .catch((err) => console.error('Error fetching likes:', err));
-
-    if (localStorage.getItem('hasLiked')) setLiked(true);
-
-    return () => window.removeEventListener(VIEW_COUNT_EVENT, onViewCount);
-  }, []);
-
-  const handleLike = () => {
-    if (liked) return;
-    fetch(`${COUNT_API}/hit/${LIKES_KEY}`)
-      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
-      .then((data) => {
-        setLikes(data.value);
-        setLiked(true);
-        localStorage.setItem('hasLiked', 'true');
-      })
-      .catch((err) => console.error('Error incrementing likes:', err));
-  };
-
   return (
     <main className={styles.main}>
       <NavBar />
@@ -79,33 +31,6 @@ export default function Home() {
           <img src="/media/my-logo-square.jpeg" alt="Camille logo" width={90} height={90} style={{ borderRadius: '50%', objectFit: 'cover' }} />
           <h1>{profile?.name ?? 'Camille Buan'}</h1>
           <p>{profile?.title ?? 'Senior Data Analyst | Data Science'}</p>
-
-          <section className={styles.stats}>
-            <div className={styles.statItem}>
-              <div className={styles.statDisplay}>
-                <img src="/media/view-logo.png?v=2" alt="Views" className={styles.viewIcon} />
-                <span className={styles.statNumber}>{views}</span>
-              </div>
-              <span className={styles.statLabel}>Views</span>
-            </div>
-            <div className={styles.statItem}>
-              <div className={styles.statDisplay}>
-                <button
-                  type="button"
-                  onClick={handleLike}
-                  className={styles.likeIconButton}
-                  disabled={liked}
-                  aria-label={liked ? 'Liked' : 'Like this portfolio'}
-                >
-                  <img src="/media/like-logo.png?v=2" alt="" className={styles.likeIcon} width={30} height={30} />
-                </button>
-                <span className={styles.statNumber} aria-hidden="true">
-                  {likes}
-                </span>
-              </div>
-              <span className={styles.statLabel}>Likes</span>
-            </div>
-          </section>
 
           <div className={styles.socials}>
             <div className={styles.socialIcons}>
